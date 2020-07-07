@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<br><br>
+
+<div class="container">
+
+  <div class="jumbotron">
+    <h2>Welcome to the official and legit Farmers Market platform.</h2>
+    <p>If you have a product and you are looking for the right customers, this platform is yours.</p>
+
+    <h2> Let's get your perfect match:</h2>
+
+    <form class="text-center border border-light p-5" method="POST">
+      {% csrf_token %}
+      <h2>AM A: </h2>
+<br>
+      <h2><a href="{% url 'farmer:farmer_registration' %}" class="btn btn-primary form-control">FARMER</a></h2>
+<br>
+    <h2><a href="{% url 'trader:trader_registration' %}" class="btn btn-primary form-control">TRADER</a></h2>
+<br>
+    <h2><a href="{% url 'shop:product_list' %}" class="btn btn-primary form-control">CONSUMER</a></h2>
+    </form>
+  </div>
+
+</div>
+
+
+{% endblock %}

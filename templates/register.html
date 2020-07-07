@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<div class="container">
+  <br>
+  <div class="jumbotron">
+    <h2>Welcome To The Registration Page:</h2>
+    <h3>Register as: </h3>
+    <h2><a href="{% url 'farmer:farmer_registration' %}" class="btn btn-primary">A FARMER</a></h2>
+    <hr>
+    <h3>OR</h3>
+    <h2><a href="{% url 'trader:trader_registration' %}" class="btn btn-primary">A TRADER</a></h2>
+  </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+<br>
+{% block content %}
+<br>
+<div class="container">
+<br>
+  <div class="jumbotron">
+
+    <h3>FARMER REGISTRATION:</h3>
+
+    <form action="{% url 'farmer:farmer_registration' %}" method="POST">
+
+      {% csrf_token %}
+
+      {% bootstrap_form form %}
+
+      <input type="submit" value="REGISTER" class="btn btn-primary">
+
+    </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

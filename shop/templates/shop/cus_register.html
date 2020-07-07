@@ -1,0 +1,19 @@
+{% extends shop/market_base.html %}
+
+{% load bootstrap3 %}
+
+<div class="container">
+
+  <div class="jumbotron">
+    <h2>SIGN UP</h2>
+
+    <form class="" action="index.html" method="post">
+
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <input type="submit" class="btn btn-primary" value="SIGN UP">
+
+    </form>
+  </div>
+
+</div>

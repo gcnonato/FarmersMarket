@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<br>
+<div class="container">
+
+  <div class="jumbotron">
+    <h2>FARMER DETAILS:</h2>
+
+    <div class="farm_image">
+
+      <a href="#">
+          <img src="{% if farmer_details.profile_pic %} {{ farmer_details.profile_pic.url }} {% else %} {% static 'img/default.jpeg' %} {% endif %}" alt="Farm Pic" style="height: 130px; width: auto">
+      </a>
+    </div>
+      <div class="details">
+        <h4>Name: {{farmer_details.full_names}}</h4>
+        <h4>Telephone: {{farmer_details.telephone_number}}</h4>
+        <h4>Location: {{farmer_details.location}}</h4>
+        <h4>Product: {{farmer_details.farm_product}}</h4>
+      </div>
+
+    <p><a class="btn btn-primary" href="#">CONTACT {{farmer_details.full_names}} </a></p>
+
+
+  </div>
+
+</div>
+
+{% endblock %}

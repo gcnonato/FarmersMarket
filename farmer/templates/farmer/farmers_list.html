@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<br>
+{% block content %}
+<div class="container">
+  <br>
+
+  <div class="jumbotron">
+    <h2>LIST OF FARMERS</h2>
+
+    <p>Are you a farmer looking for profitable markets? then
+      <a href="{% url 'farmer:farmer_registration' %}" class="btn btn-primary">register with us</a>  today.</p>
+    <p>Otherwise, feel free to select any farmer from the list below for more details.</p>
+
+
+    <div class="container-fluid">
+       <div class="row" style="margin-top: 6%">
+
+         <div class="col-sm-8 blog-main">
+
+           <div class="blog-post">
+               <div class="row">
+                   {% for farmer in farmers %}
+                       <div class="col-md-4">
+                         <div class="thumbnail">
+                             <a href="{{ farmer.id }}">
+                                 <img src="{% if farmer.profile_pic %} {{ farmer.profile_pic.url }} {% else %} {% static 'img/default.jpeg' %} {% endif %}" alt="Farm Logo" style="height: 130px; width: auto">
+                             </a>
+                             <div class="caption">
+                                 <h3 class="text-center">
+                                     <a href="{{farmer.id}}">{{ farmer.full_names }}</a>
+                                 </h3>
+                                 <h4 class="text-center">{{ farmer.farm_product }}</h4>
+                             </div>
+                         </div>
+                       </div>
+                   {% endfor %}
+               </div>
+
+
+           </div><!-- /.blog-post -->
+
+         </div><!-- /.blog-main -->
+
+         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+           <div class="sidebar-module">
+             <h4>PLANT CATEGORIES</h4>
+             <ol class="list-unstyled">
+               <li {% if not farm_product %} class="active"{% endif %}><a href="{% url 'farmer:all' %}">All FARMERS AND PLANTS</a></li>
+             {% for pro in farmer_details %}
+
+               <li {% if farm_product %} class="active"{% endif %}>
+                   <a href="{{ pro.get_absolute_url }}">{{ farmer_details.farm_product }}</a>
+               </li>
+             {% endfor %}
+             </ol>
+           </div>
+         </div><!-- /.blog-sidebar -->
+
+         </div>
+         </div>
+
+
+  </div>
+
+</div>
+
+{% endblock %}

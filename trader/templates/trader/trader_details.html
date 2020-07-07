@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+<div class="container">
+<br>
+  <div class="jumbotron">
+    <h2>TRADER DETAILS:</h2>
+
+    <div class="farm_image">
+
+      <a href="#">
+          <img src="{% if trader_details.profile_pic %} {{ trader_details.profile_pic.url }} {% else %} {% static 'img/default.jpeg' %} {% endif %}" alt="Farm Pic" style="height: 130px; width: auto">
+      </a>
+    </div>
+
+    <p>Name: {{trader_details.full_names}}</p>
+    <p>Telephone: {{trader_details.telephone_number}}</p>
+    <p>Product: {{trader_details.vending_product}}</p>
+    <p>Market: {{trader_details.market_location}}</p>
+
+    <p><a class="btn btn-primary" href="#">CONTACT {{trader_details.full_names}} </a></p>
+
+  </div>
+
+</div>
+
+{% endblock %}
