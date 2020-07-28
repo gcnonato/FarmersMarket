@@ -49,7 +49,7 @@
            <div class="sidebar-module">
              <h4>PLANT CATEGORIES</h4>
              <ol class="list-unstyled">
-               <li {% if not farm_product %} class="active"{% endif %}><a href="{% url 'farmer:all' %}">All VENDORS AND PLANTS</a></li>
+               <li {% if not farm_product %} class="active"{% endif %}><a href="{% url 'trader:all_traders' %}">All VENDORS AND PLANTS</a></li>
              {% for pro in farmer_details %}
 
                <li {% if farm_product %} class="active"{% endif %}>

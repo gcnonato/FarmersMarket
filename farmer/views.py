@@ -22,7 +22,7 @@ class FarmerDetails(DetailView):
     """docstring for FarmerDetailsView."""
 
     # By default, a detail view returns a lower case version of the model. Eg, in this case,
-    # the default view returned will be named as school.
+    # the default view returned will be named as farmerdetails.
 
     context_object_name = 'farmer_details'
     model = models.FarmerInfo

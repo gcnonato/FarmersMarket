@@ -22,11 +22,8 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse_lazy("blog:post_detail",kwargs={'pk':self.pk})
 
-
     def __str__(self):
         return self.title
-
-
 
 class Comment(models.Model):
     post = models.ForeignKey('blog.Post', related_name='comments', on_delete=models.CASCADE)

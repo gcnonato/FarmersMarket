@@ -21,8 +21,6 @@ from django.conf import settings
 
 # To use the built in user authentication module.
 from django.contrib.auth import views as auth_views
-
-
 from django.contrib.auth.views import LogoutView, LoginView
 from django.conf.urls.static import static
 
