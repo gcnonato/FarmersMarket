@@ -11,6 +11,8 @@
                 <h3 class="page-header">Thank You For Shopping With Us
                 </h3>
                 <p>Your order has been successfully completed. Your order number is <strong>{{ order.id }}</strong>.</p>
+                <p><a class="btn btn-primary" href="{% url 'shop:product_list' %}">Continue Shopping</a></p>
+                <p><a class="btn btn-primary" href="{% url 'blog:post_list' %}">Or, Visit our blog.</a></p>
             </div>
         </div>
     </div>

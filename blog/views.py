@@ -36,21 +36,16 @@ class CreatePostView(LoginRequiredMixin,CreateView):
 class PostUpdateView(LoginRequiredMixin,UpdateView):
     login_url = '/login/'
     redirect_field_name = 'blog/post_detail.html'
-
     form_class = PostForm
-
     model = Post
-
 
 class DraftListView(LoginRequiredMixin,ListView):
     login_url = '/login/'
     redirect_field_name = 'blog/post_list.html'
-
     model = Post
 
     def get_queryset(self):
         return Post.objects.filter(published_date__isnull=True).order_by('created_date')
-
 
 class PostDeleteView(LoginRequiredMixin,DeleteView):
     model = Post
